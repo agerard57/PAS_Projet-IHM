@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Menus,
-  ExtCtrls;
+  ExtCtrls, StdCtrls;
 
 type
 
@@ -23,6 +23,7 @@ type
     item_inscrit_archive_n1: TMenuItem;
     item_inscrit_archive_n2: TMenuItem;
     item_filliere_liste: TMenuItem;
+    lbl_bienvenue: TLabel;
     mnu_main: TMainMenu;
     pnl_selection: TPanel;
     pnl_travail: TPanel;
@@ -30,6 +31,7 @@ type
     pnl_ariane: TPanel;
     procedure FormShow(Sender: TObject);
     procedure item_quitterClick(Sender: TObject);
+    procedure lbl_bienvenueClick(Sender: TObject);
     procedure mnu_item_Click(Sender: TObject);
   private
     { private declarations }
@@ -64,6 +66,11 @@ end;
 procedure Tf_gabarit.item_quitterClick(Sender: TObject);
 begin
   close;
+end;
+
+procedure Tf_gabarit.lbl_bienvenueClick(Sender: TObject);
+begin
+
 end;
 
 procedure Tf_gabarit.mnu_item_Click(Sender: TObject);

@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="2">
+    <Units Count="3">
       <Unit0>
         <Filename Value="projetIHM.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -20,14 +20,23 @@
         <ComponentName Value="f_gabarit"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="23"/>
-        <CursorPos X="3" Y="55"/>
+        <TopLine Value="46"/>
+        <CursorPos X="54" Y="63"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="u_feuille_style.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="78"/>
+        <CursorPos X="30" Y="102"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit2>
     </Units>
-    <JumpHistory Count="17" HistoryIndex="16">
+    <JumpHistory Count="19" HistoryIndex="18">
       <Position1>
         <Filename Value="u_gabarit.pas"/>
       </Position1>
@@ -95,6 +104,14 @@
         <Filename Value="u_gabarit.pas"/>
         <Caret Line="54" Column="3" TopLine="22"/>
       </Position17>
+      <Position18>
+        <Filename Value="u_gabarit.pas"/>
+        <Caret Line="61" Column="3" TopLine="29"/>
+      </Position18>
+      <Position19>
+        <Filename Value="u_gabarit.pas"/>
+        <Caret Line="73" Column="43" TopLine="47"/>
+      </Position19>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

@@ -40,7 +40,30 @@ object f_gabarit: Tf_gabarit
     Width = 950
     Align = alRight
     Caption = 'zone de travail'
+    ClientHeight = 720
+    ClientWidth = 950
     TabOrder = 2
+    object lbl_bienvenue: TLabel
+      Left = 1
+      Height = 628
+      Top = 91
+      Width = 948
+      Align = alClient
+      Alignment = taCenter
+      AutoSize = False
+      BorderSpacing.Top = 90
+      Caption = 'Bienvenue'#13#10#13#10'dans l''application de'#13#10#13#10'gestion de la Scolarité'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlue
+      Font.Height = -80
+      Font.Name = 'Calibri'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold, fsItalic]
+      ParentColor = False
+      ParentFont = False
+      OnClick = lbl_bienvenueClick
+    end
   end
   object pnl_selection: TPanel
     Left = 0
@@ -89,6 +112,7 @@ object f_gabarit: Tf_gabarit
     end
     object item_quitter: TMenuItem
       Caption = 'Quitter'
+      OnClick = item_quitterClick
     end
   end
 end
