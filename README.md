@@ -1,6 +1,9 @@
 # Projet-IHM
 Projet IHM
 
+V.05.27.13 :
+-Création de "f_select_inscrit"
+-Implémentation de "f_select_inscrit"
 
 V.05.27.10 :
 -Création du fichier

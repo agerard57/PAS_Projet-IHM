@@ -32,6 +32,8 @@ type
     procedure FormShow(Sender: TObject);
     procedure item_quitterClick(Sender: TObject);
     procedure mnu_item_Click(Sender: TObject);
+    procedure choix_item_liste;
+
   private
     { private declarations }
   public
@@ -48,7 +50,7 @@ implementation
 { Tf_gabarit }
 
 
-USES u_feuille_style;
+USES u_feuille_style, u_select_inscrit;
 
 
 
@@ -79,6 +81,18 @@ begin
     pnl_ariane.Caption := ' > ' + item.caption + pnl_ariane.Caption;
     item := item.parent;
   until item.parent = nil;
+  item := TmenuItem(Sender);
+  if item=item_inscrit_liste then choix_item_liste;
+
+end;
+
+procedure Tf_gabarit.choix_item_liste;
+begin
+ f_select_inscrit.borderstyle := bsNone;
+ f_select_inscrit.parent := pnl_selection;
+ f_select_inscrit.align := alClient;
+ f_select_inscrit.init;
+ f_select_inscrit.show;
 end;
 
 end.

@@ -21,7 +21,8 @@ object f_gabarit: Tf_gabarit
     Top = 0
     Width = 1200
     Align = alTop
-    Caption = 'fil d''ariane'
+    Alignment = taLeftJustify
+    Caption = '> Accueil'
     TabOrder = 0
   end
   object pnl_info: TPanel
@@ -30,6 +31,7 @@ object f_gabarit: Tf_gabarit
     Top = 750
     Width = 1200
     Align = alBottom
+    Alignment = taLeftJustify
     Caption = 'message d''information'
     TabOrder = 1
   end
