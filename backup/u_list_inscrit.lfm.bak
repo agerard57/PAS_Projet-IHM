@@ -1,7 +1,7 @@
 inherited f_list_inscrit: Tf_list_inscrit
-  Left = 370
+  Left = 371
   Height = 720
-  Top = 146
+  Top = 147
   Width = 920
   Caption = 'Liste des inscriptions'
   ClientHeight = 720
@@ -19,15 +19,19 @@ inherited f_list_inscrit: Tf_list_inscrit
       ClientWidth = 521
       inherited btn_line_detail: TSpeedButton
         Left = 359
+        OnClick = btn_line_detailClick
       end
       inherited btn_line_add: TSpeedButton
         Left = 400
+        OnClick = btn_line_addClick
       end
       inherited btn_line_delete: TSpeedButton
         Left = 479
+        OnClick = btn_line_deleteClick
       end
       inherited btn_line_edit: TSpeedButton
         Left = 439
+        OnClick = btn_line_editClick
       end
     end
   end

@@ -28,11 +28,12 @@ object f_select_inscrit: Tf_select_inscrit
     TabOrder = 1
     object pnl_tous: TPanel
       Left = 1
-      Height = 100
+      Height = 102
       Top = 1
       Width = 278
       Align = alTop
-      ClientHeight = 100
+      AutoSize = True
+      ClientHeight = 102
       ClientWidth = 278
       TabOrder = 0
       object pnl_tous_btn: TPanel
@@ -56,11 +57,12 @@ object f_select_inscrit: Tf_select_inscrit
     end
     object pnl_etudiant: TPanel
       Left = 1
-      Height = 100
-      Top = 101
+      Height = 102
+      Top = 103
       Width = 278
       Align = alTop
-      ClientHeight = 100
+      AutoSize = True
+      ClientHeight = 102
       ClientWidth = 278
       TabOrder = 1
       object pnl_etudiant_btn: TPanel
@@ -124,11 +126,12 @@ object f_select_inscrit: Tf_select_inscrit
     end
     object pnl_filliere: TPanel
       Left = 1
-      Height = 100
-      Top = 201
+      Height = 102
+      Top = 205
       Width = 278
       Align = alTop
-      ClientHeight = 100
+      AutoSize = True
+      ClientHeight = 102
       ClientWidth = 278
       TabOrder = 2
       object pnl_filliere_btn: TPanel
@@ -173,18 +176,20 @@ object f_select_inscrit: Tf_select_inscrit
     end
     object pnl_ok: TPanel
       Left = 1
-      Height = 50
-      Top = 301
+      Height = 27
+      Top = 307
       Width = 278
       Align = alTop
-      ClientHeight = 50
+      AutoSize = True
+      ClientHeight = 27
       ClientWidth = 278
       TabOrder = 3
       object btn_ok: TButton
-        Left = 168
+        Left = 202
         Height = 25
-        Top = 16
+        Top = 1
         Width = 75
+        Align = alRight
         Caption = 'Ok'
         Default = True
         OnClick = btn_okClick

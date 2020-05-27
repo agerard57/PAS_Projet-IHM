@@ -50,7 +50,7 @@ implementation
 { Tf_gabarit }
 
 
-USES u_feuille_style, u_select_inscrit, u_list_inscrit;
+USES u_feuille_style, u_select_inscrit, u_list_inscrit,  u_detail_inscrit;
 
 
 
@@ -99,6 +99,11 @@ begin
  f_select_inscrit.align := alClient;
  f_select_inscrit.init;
  f_select_inscrit.show;
+
+ f_detail_inscrit.borderstyle := bsNone;
+ f_detail_inscrit.parent := pnl_travail;
+ f_detail_inscrit.align := alClient;
+
 end;
 
 end.
