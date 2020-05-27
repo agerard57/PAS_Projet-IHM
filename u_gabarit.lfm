@@ -61,7 +61,6 @@ object f_gabarit: Tf_gabarit
       Font.Style = [fsBold, fsItalic]
       ParentColor = False
       ParentFont = False
-      OnClick = lbl_bienvenueClick
     end
   end
   object pnl_selection: TPanel

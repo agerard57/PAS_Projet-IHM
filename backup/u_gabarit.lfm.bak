@@ -39,7 +39,6 @@ object f_gabarit: Tf_gabarit
     Top = 30
     Width = 950
     Align = alRight
-    Caption = 'zone de travail'
     ClientHeight = 720
     ClientWidth = 950
     TabOrder = 2
@@ -71,7 +70,6 @@ object f_gabarit: Tf_gabarit
     Top = 30
     Width = 250
     Align = alClient
-    Caption = 'zone de sélection'
     TabOrder = 3
   end
   object mnu_main: TMainMenu

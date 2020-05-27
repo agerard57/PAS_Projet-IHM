@@ -31,7 +31,6 @@ type
     pnl_ariane: TPanel;
     procedure FormShow(Sender: TObject);
     procedure item_quitterClick(Sender: TObject);
-    procedure lbl_bienvenueClick(Sender: TObject);
     procedure mnu_item_Click(Sender: TObject);
   private
     { private declarations }
@@ -66,11 +65,6 @@ end;
 procedure Tf_gabarit.item_quitterClick(Sender: TObject);
 begin
   close;
-end;
-
-procedure Tf_gabarit.lbl_bienvenueClick(Sender: TObject);
-begin
-
 end;
 
 procedure Tf_gabarit.mnu_item_Click(Sender: TObject);
