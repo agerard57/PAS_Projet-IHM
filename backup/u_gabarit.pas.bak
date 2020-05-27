@@ -82,7 +82,7 @@ begin
     item := item.parent;
   until item.parent = nil;
   item := TmenuItem(Sender);
-  if item=item_inscrit.liste then choix_item_liste;
+  if item=item_inscrit_liste then choix_item_liste;
 
 end;
 

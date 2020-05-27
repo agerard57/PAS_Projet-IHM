@@ -50,7 +50,7 @@ implementation
 { Tf_gabarit }
 
 
-USES u_feuille_style, u_select_inscrit;
+USES u_feuille_style, u_select_inscrit, u_list_inscrit;
 
 
 
@@ -88,6 +88,12 @@ end;
 
 procedure Tf_gabarit.choix_item_liste;
 begin
+ f_list_inscrit.borderstyle := bsNone;
+ f_list_inscrit.parent := pnl_travail;
+ f_list_inscrit.align := alClient;
+ f_list_inscrit.init;
+ f_list_inscrit.show ;
+
  f_select_inscrit.borderstyle := bsNone;
  f_select_inscrit.parent := pnl_selection;
  f_select_inscrit.align := alClient;

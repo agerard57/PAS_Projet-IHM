@@ -7,7 +7,8 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, u_gabarit, u_feuille_style, u_select_inscrit
+  Forms, zcomponent, u_gabarit, u_feuille_style, u_select_inscrit,
+  u_list_inscrit
   { you can add units after this };
 
 {$R *.res}
@@ -17,6 +18,7 @@ begin
   Application.Initialize;
   Application.CreateForm(Tf_gabarit, f_gabarit);
   Application.CreateForm(Tf_select_inscrit, f_select_inscrit);
+  Application.CreateForm(Tf_list_inscrit, f_list_inscrit);
   Application.Run;
 end.
 

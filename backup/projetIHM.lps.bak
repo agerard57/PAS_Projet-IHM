@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="4">
+    <Units Count="5">
       <Unit0>
         <Filename Value="projetIHM.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -12,7 +12,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
       </Unit0>
       <Unit1>
         <Filename Value="u_gabarit.pas"/>
@@ -20,10 +20,10 @@
         <ComponentName Value="f_gabarit"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="67"/>
-        <CursorPos X="11" Y="73"/>
-        <ComponentState Value="1"/>
-        <UsageCount Value="20"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="73"/>
+        <CursorPos X="16" Y="95"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -32,22 +32,34 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
         <CursorPos Y="19"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="u_select_inscrit.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="f_select_inscrit"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="54"/>
-        <CursorPos X="20" Y="90"/>
-        <UsageCount Value="20"/>
+        <CursorPos X="101" Y="70"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit3>
+      <Unit4>
+        <Filename Value="u_list_inscrit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_list_inscrit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="7"/>
+        <CursorPos X="9" Y="32"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit4>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
