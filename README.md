@@ -1,15 +1,18 @@
 # Projet-IHM
 Projet IHM
 
+V.05.27.14 :
+-Création de "f_list_inscrit"
+-Implémentation de "f_list_inscrit"
 
-V.05.27.13 actuelle :
-  -CrÃ©ation de "f_select_inscrit"
-  -ImplÃ©mentation de "f_select_inscrit"
+V.05.27.13 :
+-Création de "f_select_inscrit"
+-Implémentation de "f_select_inscrit"
 
 V.05.27.10 :
-  -CrÃ©ation du fichier
-  -Mise en place de l'icone
-  -CrÃ©ation de gabarit
-  -Fil d'ariane terminÃ©
-  -Bouton "Quitter" fonctionnel
-  -Message d'accueil
+-Création du fichier
+-Mise en place de l'icone
+-Création de gabarit
+-Fil d'ariane terminé
+-Bouton "Quitter" fonctionnel
+-Message d'accueil
