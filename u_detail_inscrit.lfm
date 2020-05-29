@@ -1,7 +1,7 @@
 object f_detail_inscrit: Tf_detail_inscrit
-  Left = 117
+  Left = 389
   Height = 720
-  Top = 177
+  Top = 192
   Width = 919
   Caption = 'f_detail_inscrit'
   ClientHeight = 720
@@ -172,7 +172,7 @@ object f_detail_inscrit: Tf_detail_inscrit
       object edt_genre: TEdit
         Left = 240
         Height = 23
-        Top = 32
+        Top = 48
         Width = 80
         OnEnter = edt_Enter
         TabOrder = 4
@@ -270,24 +270,24 @@ object f_detail_inscrit: Tf_detail_inscrit
         Left = 112
         Height = 15
         Top = 24
-        Width = 31
-        Caption = 'lbl_tel'
+        Width = 53
+        Caption = 'téléphone'
         ParentColor = False
       end
       object lbl_port: TLabel
         Left = 256
         Height = 15
         Top = 24
-        Width = 40
-        Caption = 'lbl_port'
+        Width = 44
+        Caption = 'portable'
         ParentColor = False
       end
       object lbl_mel: TLabel
         Left = 440
         Height = 15
         Top = 24
-        Width = 38
-        Caption = 'lbl_mel'
+        Width = 20
+        Caption = 'mel'
         ParentColor = False
       end
       object edt_tel: TEdit
@@ -363,7 +363,7 @@ object f_detail_inscrit: Tf_detail_inscrit
       object lbl_fili_court: TLabel
         Left = 336
         Height = 15
-        Top = 24
+        Top = 40
         Width = 64
         Caption = 'lbl_fili_court'
         ParentColor = False

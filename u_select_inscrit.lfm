@@ -1,7 +1,7 @@
 object f_select_inscrit: Tf_select_inscrit
-  Left = 620
+  Left = 621
   Height = 720
-  Top = 119
+  Top = 120
   Width = 280
   Caption = 'Sélection'
   ClientHeight = 720

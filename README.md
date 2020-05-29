@@ -1,6 +1,9 @@
 # Projet-IHM
 Projet IHM
 
+V.05.29.15:
+-Apparition/ disparition des "cbb"
+
 V.05.27.19 actuelle :
 -Création de "f_detail_inscrit"
 -Implémentation de "f_list_inscrit"

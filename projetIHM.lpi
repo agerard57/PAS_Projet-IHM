@@ -70,6 +70,7 @@
         <Filename Value="u_detail_inscrit.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="f_detail_inscrit"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit5>
     </Units>

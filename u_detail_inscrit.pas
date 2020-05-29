@@ -278,6 +278,10 @@ begin
  init (idinf, true); // mode affichage
  pnl_titre.caption := 'Détail d''une inscription';
  btn_retour.setFocus;
+ edt_genre.Visible := True;
+ edt_filiere.visible := True;
+ cbb_genre.Visible := False;
+ cbb_filiere.visible := False;
 end;
 
 procedure Tf_detail_inscrit.edit (idinf : string);
@@ -285,6 +289,10 @@ begin
  init (idinf, false);
  pnl_titre.caption := 'Modification d''une inscription';
  edt_num.ReadOnly := true;
+ edt_genre.Visible := False;
+ edt_filiere.visible := False;
+ cbb_genre.Visible := True;
+ cbb_filiere.visible := True;
 end;
 
 procedure Tf_detail_inscrit.add;
@@ -292,6 +300,10 @@ begin
  init ('',false);
  pnl_titre.caption := 'Nouvelle inscription';
  edt_num.setFocus;
+ edt_genre.Visible := False;
+ edt_filiere.visible := False;
+ cbb_genre.Visible := True;
+ cbb_filiere.visible := True;
 end;
 procedure Tf_detail_inscrit.delete (idinf : string);
 begin
