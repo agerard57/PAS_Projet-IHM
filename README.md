@@ -1,6 +1,9 @@
 # Projet-IHM
 Projet IHM
 
+V.06.12.23:
+- Fix du numOnly "edt_tel" et "edt_port"
+
 V.06.12.19:
 -Ajout des erreurs
 -Disparition du select quand le détail apparaît

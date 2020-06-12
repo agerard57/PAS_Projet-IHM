@@ -1,7 +1,7 @@
 object f_detail_inscrit: Tf_detail_inscrit
-  Left = 439
+  Left = 384
   Height = 720
-  Top = 190
+  Top = 282
   Width = 919
   Caption = 'f_detail_inscrit'
   ClientHeight = 720
@@ -299,6 +299,7 @@ object f_detail_inscrit: Tf_detail_inscrit
         Height = 23
         Top = 48
         Width = 85
+        NumbersOnly = True
         OnEnter = edt_Enter
         OnExit = edt_telExit
         TabOrder = 0
@@ -308,6 +309,7 @@ object f_detail_inscrit: Tf_detail_inscrit
         Height = 23
         Top = 48
         Width = 88
+        NumbersOnly = True
         OnEnter = edt_Enter
         OnExit = edt_portExit
         TabOrder = 1

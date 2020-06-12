@@ -18,7 +18,6 @@ type
     procedure btn_line_deleteClick(Sender: TObject);
     procedure btn_line_detailClick(Sender: TObject);
     procedure btn_line_editClick(Sender: TObject);
-    procedure FormShow(Sender: TObject);
 
   procedure Init;
 
@@ -57,10 +56,6 @@ begin
   f_detail_inscrit.edit (sg_liste.cells[0,sg_liste.row]);
 end;
 
-procedure Tf_list_inscrit.FormShow(Sender: TObject);
-begin
- f_select_inscrit.show;
-end;
 
 procedure Tf_list_inscrit.Init;
 begin

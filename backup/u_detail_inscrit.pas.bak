@@ -266,11 +266,13 @@ end;
 
 procedure Tf_detail_inscrit.btn_annulerClick(Sender: TObject);
 begin
+f_select_inscrit.show;
 close;
 end;
 
 procedure Tf_detail_inscrit.btn_retourClick(Sender: TObject);
 begin
+f_select_inscrit.show;
 close;
 end;
 
