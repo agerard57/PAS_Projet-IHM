@@ -1,17 +1,17 @@
 inherited f_list_inscrit: Tf_list_inscrit
-  Left = 829
-  Height = 720
-  Top = 218
+  Left = -1042
+  Height = 718
+  Top = 397
   Width = 920
   Caption = 'Liste des inscriptions'
-  ClientHeight = 720
+  ClientHeight = 718
   ClientWidth = 920
   inherited pnl_titre: TPanel
     Width = 920
     Caption = 'Liste des inscrits'
   end
   inherited pnl_btn: TPanel
-    Top = 686
+    Top = 684
     Width = 920
     ClientWidth = 920
     inherited pnl_btn_ligne: TPanel
@@ -33,15 +33,26 @@ inherited f_list_inscrit: Tf_list_inscrit
         Left = 439
         OnClick = btn_line_editClick
       end
+      object spedt_nblig: TSpinEdit[4]
+        Left = 296
+        Height = 23
+        Top = 6
+        Width = 50
+        AutoSize = False
+        MaxValue = 50
+        MinValue = 2
+        TabOrder = 0
+        Value = 2
+      end
     end
   end
   inherited pnl_affi: TPanel
-    Height = 652
+    Height = 650
     Width = 920
-    ClientHeight = 652
+    ClientHeight = 650
     ClientWidth = 920
     inherited sg_liste: TStringGrid
-      Height = 652
+      Height = 650
       Width = 920
       Columns = <      
         item

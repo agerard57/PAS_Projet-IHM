@@ -33,6 +33,7 @@ type
     procedure item_quitterClick(Sender: TObject);
     procedure mnu_item_Click(Sender: TObject);
     procedure choix_item_liste;
+    procedure choix_item_accueil;
 
   private
     { private declarations }
@@ -66,7 +67,7 @@ end;
 
 procedure Tf_gabarit.item_quitterClick(Sender: TObject);
 begin
-  close;
+close;
 end;
 
 procedure Tf_gabarit.mnu_item_Click(Sender: TObject);
@@ -83,6 +84,7 @@ begin
   until item.parent = nil;
   item := TmenuItem(Sender);
   if item=item_inscrit_liste then choix_item_liste;
+  if item=item_accueil then choix_item_accueil
 
 end;
 
@@ -103,6 +105,14 @@ begin
  f_detail_inscrit.borderstyle := bsNone;
  f_detail_inscrit.parent := pnl_travail;
  f_detail_inscrit.align := alClient;
+
+end;
+
+procedure Tf_gabarit.choix_item_accueil;
+begin
+f_list_inscrit.hide;
+f_detail_inscrit.hide;
+f_select_inscrit.hide;
 
 end;
 

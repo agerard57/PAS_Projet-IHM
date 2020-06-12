@@ -1,7 +1,7 @@
 object f_gabarit: Tf_gabarit
-  Left = 450
+  Left = 422
   Height = 800
-  Top = 345
+  Top = 100
   Width = 1200
   Caption = 'Gestion de la scolarité'
   ClientHeight = 780
@@ -22,7 +22,7 @@ object f_gabarit: Tf_gabarit
     Width = 1200
     Align = alTop
     Alignment = taLeftJustify
-    Caption = '> Accueil'
+    Caption = ' > Accueil'
     TabOrder = 0
   end
   object pnl_info: TPanel

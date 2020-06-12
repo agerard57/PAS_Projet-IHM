@@ -1,11 +1,12 @@
 object f_detail_inscrit: Tf_detail_inscrit
-  Left = 389
+  Left = 439
   Height = 720
-  Top = 192
+  Top = 190
   Width = 919
   Caption = 'f_detail_inscrit'
   ClientHeight = 720
   ClientWidth = 919
+  OnShow = FormShow
   ParentFont = True
   LCLVersion = '1.6.0.4'
   object pnl_titre: TPanel
@@ -41,6 +42,7 @@ object f_detail_inscrit: Tf_detail_inscrit
       Top = 8
       Width = 80
       Caption = 'Valider'
+      OnClick = btn_validerClick
       TabOrder = 1
     end
     object btn_retour: TButton
@@ -109,6 +111,7 @@ object f_detail_inscrit: Tf_detail_inscrit
         Height = 23
         Top = 48
         Width = 80
+        NumbersOnly = True
         OnEnter = edt_Enter
         OnExit = edt_numExit
         TabOrder = 0
@@ -175,6 +178,7 @@ object f_detail_inscrit: Tf_detail_inscrit
         Top = 48
         Width = 80
         OnEnter = edt_Enter
+        OnKeyPress = edt_genreKeyPress
         TabOrder = 4
       end
     end
@@ -240,9 +244,9 @@ object f_detail_inscrit: Tf_detail_inscrit
         ParentColor = False
       end
       object lbl_ville_erreur: TLabel
-        Left = 256
+        Left = 456
         Height = 15
-        Top = 88
+        Top = 64
         Width = 75
         Caption = 'lbl_ville_erreur'
         ParentColor = False
@@ -323,14 +327,6 @@ object f_detail_inscrit: Tf_detail_inscrit
         Top = 80
         Width = 67
         Caption = 'lbl_tel_erreur'
-        ParentColor = False
-      end
-      object lbl_port_erreur: TLabel
-        Left = 256
-        Height = 15
-        Top = 80
-        Width = 76
-        Caption = 'lbl_port_erreur'
         ParentColor = False
       end
       object lbl_mel_erreur: TLabel

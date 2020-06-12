@@ -69,6 +69,7 @@ procedure Tf_select_inscrit.btn_okClick(Sender: TObject);
 begin
  btn_ok.visible := false;
  pnl_actif.enabled := false;
+
 end ;
 
 

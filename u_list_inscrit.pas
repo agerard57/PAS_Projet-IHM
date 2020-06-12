@@ -5,13 +5,15 @@ unit u_list_inscrit;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, u_liste;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
+  Buttons, Grids, Spin, u_liste;
 
 type
 
   { Tf_list_inscrit }
 
   Tf_list_inscrit = class(TF_liste)
+    spedt_nblig: TSpinEdit;
     procedure btn_line_addClick(Sender: TObject);
     procedure btn_line_deleteClick(Sender: TObject);
     procedure btn_line_detailClick(Sender: TObject);
@@ -32,7 +34,7 @@ implementation
 
 {$R *.lfm}
 
-uses u_feuille_style, u_detail_inscrit;
+uses u_feuille_style, u_detail_inscrit, u_select_inscrit;
 
 procedure Tf_list_inscrit.btn_line_addClick(Sender: TObject);
 begin
@@ -53,6 +55,7 @@ procedure Tf_list_inscrit.btn_line_editClick(Sender: TObject);
 begin
   f_detail_inscrit.edit (sg_liste.cells[0,sg_liste.row]);
 end;
+
 
 procedure Tf_list_inscrit.Init;
 begin

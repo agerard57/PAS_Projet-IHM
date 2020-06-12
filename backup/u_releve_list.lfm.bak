@@ -1,0 +1,68 @@
+inherited f_releve_list: Tf_releve_list
+  Left = 372
+  Height = 163
+  Top = 153
+  Width = 409
+  Caption = 'Relevé de notes'
+  ClientHeight = 163
+  ClientWidth = 409
+  inherited pnl_titre: TPanel
+    Width = 409
+  end
+  inherited pnl_btn: TPanel
+    Top = 129
+    Width = 409
+    ClientWidth = 409
+    inherited pnl_btn_ligne: TPanel
+      Width = 10
+      ClientWidth = 10
+      inherited btn_line_detail: TSpeedButton
+        Left = -41
+      end
+      inherited btn_line_add: TSpeedButton
+        Left = -39
+      end
+      inherited btn_line_delete: TSpeedButton
+        Left = -32
+      end
+      inherited btn_line_edit: TSpeedButton
+        Left = -40
+      end
+    end
+  end
+  inherited pnl_affi: TPanel
+    Height = 95
+    Width = 409
+    ClientHeight = 95
+    ClientWidth = 409
+    inherited sg_liste: TStringGrid
+      Height = 95
+      Width = 409
+      ColCount = 3
+      Columns = <      
+        item
+          PickList.Strings = (          )
+          Title.Caption = 'UE'
+          Width = 219
+        end      
+        item
+          PickList.Strings = (          )
+          Title.Caption = 'Coeff'
+          Width = 80
+        end      
+        item
+          PickList.Strings = (          )
+          Title.Caption = 'Note'
+          Width = 80
+        end>
+      ColWidths = (
+        219
+        80
+        80
+      )
+      Cells = (
+        0
+      )
+    end
+  end
+end

@@ -37,7 +37,6 @@ type
     lbl_postal_erreur: TLabel;
     lbl_ville_erreur: TLabel;
     lbl_tel_erreur: TLabel;
-    lbl_port_erreur: TLabel;
     lbl_mel_erreur: TLabel;
     lbl_ident: TLabel;
     lbl_filiere: TLabel;
@@ -65,6 +64,7 @@ type
     pnl_filiere: TPanel;
     procedure btn_annulerClick(Sender: TObject);
     procedure btn_retourClick(Sender: TObject);
+    procedure edt_genreKeyPress(Sender: TObject; var Key: char);
     procedure edt_numExit(Sender: TObject);
     procedure edt_nomExit(Sender: TObject);
     procedure edt_prenomExit(Sender: TObject);
@@ -74,6 +74,7 @@ type
     procedure edt_telExit(Sender: TObject);
     procedure edt_portExit(Sender: TObject);
     procedure edt_melExit(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure init ( idinf : string; affi : boolean);
     procedure detail ( idinf : string);
     procedure edit ( idinf : string);
@@ -83,6 +84,7 @@ type
     procedure lbl_fili_longClick(Sender: TObject);
     procedure pnl_titreClick(Sender: TObject);
     procedure edt_Enter (Sender : TObject );
+    procedure btn_validerClick(Sender: TObject);
 
   private
     { private declarations }
@@ -91,7 +93,7 @@ type
      procedure affi_adresse ( num : string);
      procedure affi_contact ( num : string);
      procedure affi_filiere ( num : string);
-     function affi_erreur_saisie ( erreur : string;lbl : TLabel; edt : TEdit) : boolean;
+     function  affi_erreur_saisie (erreur : string; lbl : TLabel; obj : TObject) : boolean;
 
   public
     { public declarations }
@@ -104,7 +106,7 @@ implementation
 
 {$R *.lfm}
 
-uses u_feuille_style, u_list_inscrit;
+uses u_feuille_style, u_list_inscrit, u_select_inscrit;
 
 { Tf_detail_inscrit }
 
@@ -149,10 +151,8 @@ begin
  edt_nom.clear;
  edt_prenom.clear;
  edt_genre.clear;
- edt_num.ReadOnly :=true;
- edt_nom.ReadOnly :=true;
- edt_prenom.ReadOnly :=true;
- edt_genre.ReadOnly :=true;
+ cbb_filiere.ReadOnly := true;
+ cbb_genre.ReadOnly := true;
 // initialisation adresse
  lbl_adresse_erreur.caption :='';
  lbl_postal_erreur.caption :='';
@@ -166,7 +166,6 @@ begin
 // initialisation contact
  lbl_tel_erreur.caption :='';
  lbl_mel_erreur.caption :='';
- lbl_port_erreur.caption :='';
  edt_tel.clear;
  edt_tel.ReadOnly :=affi;
  edt_port.clear;
@@ -195,6 +194,71 @@ begin
  THEN affi_page;
 end;
 
+procedure Tf_detail_inscrit.btn_validerClick(Sender: TObject);
+var
+    //flux : TLoadDataSet;
+    saisie, erreur, ch	 : string;
+    i 	     : integer;
+    complete  : boolean;
+begin
+    complete := true;
+
+        if  id = ''
+    then begin
+	 erreur := '';
+	 saisie := edt_num.text;
+	 if  saisie = ''   then  erreur := 'Le numéro doit être rempli.'
+	 //else begin
+	   //   flux := modele.inscrit_liste_etu(saisie, '');
+	     // if  NOT  flux.endOf
+	       //then  erreur := 'Le numéro existe déjà';
+	 end;
+	 complete := affi_erreur_saisie (erreur, lbl_num_erreur, edt_num)  AND  complete;
+
+    erreur := '';
+    saisie := edt_nom.text;
+    if  saisie = ''  then  erreur := 'Le nom doit être rempli.';
+    complete := affi_erreur_saisie (erreur, lbl_nom_erreur, edt_nom)  AND  complete;
+
+    erreur := '';
+    saisie := edt_prenom.text;
+    if  saisie = ''  then  erreur := 'Le prénom doit être rempli.';
+    complete := affi_erreur_saisie (erreur, lbl_prenom_erreur, edt_prenom)  AND  complete;
+
+    erreur := '';
+    saisie := edt_adresse.text;
+    if  saisie = ''  then  erreur := 'L''adresse doit être remplie.';
+    complete := affi_erreur_saisie (erreur, lbl_adresse_erreur, edt_adresse)  AND  complete;
+
+    erreur := '';
+    saisie := edt_postal.text;
+    if  saisie = ''  then  erreur := 'Le code postal doit être rempli.';
+    complete := affi_erreur_saisie (erreur, lbl_postal_erreur, edt_postal)  AND  complete;
+
+    erreur := '';
+    saisie := edt_ville.text;
+    if  saisie = ''  then  erreur := 'La commune doit être remplie.';
+    complete := affi_erreur_saisie (erreur, lbl_ville_erreur, edt_ville)  AND  complete;
+
+    erreur := '';
+    saisie := edt_tel.text + edt_port.text;
+    if  saisie = ''  then  erreur := 'Le téléphone ou le portable doit être rempli.';
+    complete := affi_erreur_saisie (erreur, lbl_tel_erreur, edt_tel)  AND  complete;
+
+    erreur := '';
+    saisie := edt_mel.text;
+    if  saisie = ''  then  erreur := 'L''adresse mel doit être remplie.';
+    complete := affi_erreur_saisie (erreur, lbl_mel_erreur, edt_mel)  AND  complete;
+
+
+    erreur := '';
+    saisie := cbb_filiere.text;
+    if  saisie = ''  then  erreur := 'La filière doit être renseignée.';
+complete := affi_erreur_saisie (erreur, lbl_filiere_erreur, cbb_filiere)  AND  complete;
+
+end;
+
+
 procedure Tf_detail_inscrit.affi_page;
 begin
 // affichage des données de la base, complété par la suite
@@ -202,13 +266,21 @@ end;
 
 procedure Tf_detail_inscrit.btn_annulerClick(Sender: TObject);
 begin
+f_select_inscrit.show;
 close;
 end;
 
 procedure Tf_detail_inscrit.btn_retourClick(Sender: TObject);
 begin
+f_select_inscrit.show;
 close;
 end;
+
+procedure Tf_detail_inscrit.edt_genreKeyPress(Sender: TObject; var Key: char);
+begin
+
+end;
+
 
 procedure Tf_detail_inscrit.edt_numExit(Sender: TObject);
 begin
@@ -271,6 +343,11 @@ edt_mel.text := TRIM(edt_mel.text);
 IF NOT ( edt_mel.text = oldvaleur )
 THEN affi_contact (edt_mel.text);
 
+end;
+
+procedure Tf_detail_inscrit.FormShow(Sender: TObject);
+begin
+  f_select_inscrit.hide;
 end;
 
 procedure Tf_detail_inscrit.detail (idinf : string);
@@ -383,12 +460,12 @@ begin
    end;
 end;
 
- function  Tf_detail_inscrit.affi_erreur_saisie (erreur : string; lbl : TLabel; edt : TEdit) : boolean;
+ function  Tf_detail_inscrit.affi_erreur_saisie (erreur : string; lbl : TLabel; obj : TObject) : boolean;
 begin
    lbl.caption := erreur;
    if  NOT (erreur = '')
    then begin
-	edt.setFocus;
+	TEdit(obj).setFocus;
 	result := false;
    end
    else result := true;
