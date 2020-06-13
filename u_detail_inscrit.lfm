@@ -1,10 +1,10 @@
 object f_detail_inscrit: Tf_detail_inscrit
-  Left = 384
-  Height = 720
-  Top = 282
+  Left = 475
+  Height = 625
+  Top = 943
   Width = 919
   Caption = 'f_detail_inscrit'
-  ClientHeight = 720
+  ClientHeight = 625
   ClientWidth = 919
   OnShow = FormShow
   ParentFont = True
@@ -21,7 +21,7 @@ object f_detail_inscrit: Tf_detail_inscrit
   object pnl_btn: TPanel
     Left = 0
     Height = 40
-    Top = 680
+    Top = 585
     Width = 919
     Align = alBottom
     ClientHeight = 40
@@ -57,11 +57,11 @@ object f_detail_inscrit: Tf_detail_inscrit
   end
   object pnl_detail: TPanel
     Left = 0
-    Height = 654
+    Height = 559
     Top = 26
     Width = 919
     Align = alClient
-    ClientHeight = 654
+    ClientHeight = 559
     ClientWidth = 919
     TabOrder = 2
     object pnl_ident: TPanel
@@ -404,11 +404,11 @@ object f_detail_inscrit: Tf_detail_inscrit
     end
     object pnl_releve: TPanel
       Left = 1
-      Height = 221
+      Height = 126
       Top = 432
       Width = 917
       Align = alClient
-      ClientHeight = 221
+      ClientHeight = 126
       ClientWidth = 917
       TabOrder = 4
       object pnl_releve_titre: TPanel
@@ -440,7 +440,7 @@ object f_detail_inscrit: Tf_detail_inscrit
       end
       object pnl_releve_list: TPanel
         Left = 1
-        Height = 180
+        Height = 85
         Top = 40
         Width = 551
         Align = alLeft

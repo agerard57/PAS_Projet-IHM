@@ -1,7 +1,7 @@
 object f_gabarit: Tf_gabarit
-  Left = 459
+  Left = 257
   Height = 1008
-  Top = 37
+  Top = 872
   Width = 1200
   Caption = 'Gestion de la scolarité'
   ClientHeight = 988

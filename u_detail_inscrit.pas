@@ -261,6 +261,7 @@ end;
 
 procedure Tf_detail_inscrit.affi_page;
 begin
+     result := load('sp_inscrit_list_tous',[]);
 // affichage des données de la base, complété par la suite
 end;
 
