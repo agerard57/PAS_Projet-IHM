@@ -51,7 +51,7 @@ implementation
 { Tf_gabarit }
 
 
-USES u_feuille_style, u_select_inscrit, u_list_inscrit,  u_detail_inscrit;
+USES u_feuille_style, u_select_inscrit, u_list_inscrit,  u_detail_inscrit, u_modele;
 
 
 
@@ -114,6 +114,16 @@ f_list_inscrit.hide;
 f_detail_inscrit.hide;
 f_select_inscrit.hide;
 
+end;
+
+procedure Tf_gabarit.FormShow(Sender: TObject);
+begin
+modele.open;
+end;
+procedure Tf_gabarit.item_quitterClick(Sender: TObject);
+begin
+modele.close;
+close;
 end;
 
 end.

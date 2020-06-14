@@ -1,6 +1,12 @@
 # Projet-IHM
-Projet IHM
 
+
+V.06.14.18:
+-Implémantation de la BDD
+-Fichier SQL disponible
+-Implémentation des vues et des procédures dans la BDD et dans Lazarus
+-Création de u_modele
+TODO: détail / suppression / TspinEdit / Releve
 V.06.12.23:
 - Fix du numOnly "edt_tel" et "edt_port"
 

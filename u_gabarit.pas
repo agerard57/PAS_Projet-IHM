@@ -51,7 +51,7 @@ implementation
 { Tf_gabarit }
 
 
-USES u_feuille_style, u_select_inscrit, u_list_inscrit,  u_detail_inscrit;
+USES u_feuille_style, u_select_inscrit, u_list_inscrit,  u_detail_inscrit, u_modele;
 
 
 
@@ -63,10 +63,12 @@ begin
   style.panel_defaut (pnl_info);
   f_gabarit.width := 1200;
   f_gabarit.height := 800;
+  modele.open;
 end;
 
 procedure Tf_gabarit.item_quitterClick(Sender: TObject);
 begin
+modele.close;
 close;
 end;
 

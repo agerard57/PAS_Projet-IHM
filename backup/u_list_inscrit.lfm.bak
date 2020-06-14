@@ -1,17 +1,17 @@
 inherited f_list_inscrit: Tf_list_inscrit
-  Left = -1042
-  Height = 718
-  Top = 397
+  Left = 856
+  Height = 717
+  Top = 257
   Width = 920
   Caption = 'Liste des inscriptions'
-  ClientHeight = 718
+  ClientHeight = 717
   ClientWidth = 920
   inherited pnl_titre: TPanel
     Width = 920
     Caption = 'Liste des inscrits'
   end
   inherited pnl_btn: TPanel
-    Top = 684
+    Top = 683
     Width = 920
     ClientWidth = 920
     inherited pnl_btn_ligne: TPanel
@@ -47,12 +47,12 @@ inherited f_list_inscrit: Tf_list_inscrit
     end
   end
   inherited pnl_affi: TPanel
-    Height = 650
+    Height = 649
     Width = 920
-    ClientHeight = 650
+    ClientHeight = 649
     ClientWidth = 920
     inherited sg_liste: TStringGrid
-      Height = 650
+      Height = 649
       Width = 920
       Columns = <      
         item

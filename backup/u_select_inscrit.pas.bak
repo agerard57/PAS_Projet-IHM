@@ -52,7 +52,7 @@ implementation
 
 {$R *.lfm}
 
-uses u_feuille_style;
+uses u_feuille_style, u_list_inscrit, u_modele;
 
 
 { Tf_select_inscrit }
@@ -69,6 +69,15 @@ procedure Tf_select_inscrit.btn_okClick(Sender: TObject);
 begin
  btn_ok.visible := false;
  pnl_actif.enabled := false;
+
+  if pnl_tous_edit.Visible then
+   f_list_inscrit.affi_data(modele.inscri_list_tous)
+
+   else if pnl_etudiant_edit.visible then
+   f_list_inscrit.affi_data(modele.inscri_list_etu(edt_num_etu.text, edt_nom_etu.text))
+
+   else if pnl_filliere_edit.visible then
+   f_list_inscrit.affi_data(modele.inscri_list_filliere(edt_code_fil.text))
 
 end ;
 
