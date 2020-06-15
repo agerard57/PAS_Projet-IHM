@@ -1,10 +1,10 @@
 object f_detail_inscrit: Tf_detail_inscrit
-  Left = 384
-  Height = 720
-  Top = 282
+  Left = 1332
+  Height = 717
+  Top = 986
   Width = 919
-  Caption = 'f_detail_inscrit'
-  ClientHeight = 720
+  Caption = 'Détail des inscriptions'
+  ClientHeight = 717
   ClientWidth = 919
   OnShow = FormShow
   ParentFont = True
@@ -21,7 +21,7 @@ object f_detail_inscrit: Tf_detail_inscrit
   object pnl_btn: TPanel
     Left = 0
     Height = 40
-    Top = 680
+    Top = 677
     Width = 919
     Align = alBottom
     ClientHeight = 40
@@ -57,11 +57,11 @@ object f_detail_inscrit: Tf_detail_inscrit
   end
   object pnl_detail: TPanel
     Left = 0
-    Height = 654
+    Height = 651
     Top = 26
     Width = 919
     Align = alClient
-    ClientHeight = 654
+    ClientHeight = 651
     ClientWidth = 919
     TabOrder = 2
     object pnl_ident: TPanel
@@ -135,7 +135,7 @@ object f_detail_inscrit: Tf_detail_inscrit
         TabOrder = 2
       end
       object cbb_genre: TComboBox
-        Left = 240
+        Left = 232
         Height = 23
         Top = 48
         Width = 80
@@ -145,6 +145,7 @@ object f_detail_inscrit: Tf_detail_inscrit
           'M'
           'Mme'
         )
+        OnChange = cbb_genreChange
         TabOrder = 3
         Text = 'M'
       end
@@ -171,15 +172,6 @@ object f_detail_inscrit: Tf_detail_inscrit
         Width = 96
         Caption = 'lbl_prenom_erreur'
         ParentColor = False
-      end
-      object edt_genre: TEdit
-        Left = 240
-        Height = 23
-        Top = 48
-        Width = 80
-        OnEnter = edt_Enter
-        OnKeyPress = edt_genreKeyPress
-        TabOrder = 4
       end
     end
     object pnl_adresse: TPanel
@@ -376,14 +368,6 @@ object f_detail_inscrit: Tf_detail_inscrit
         ParentColor = False
         OnClick = lbl_fili_longClick
       end
-      object edt_filiere: TEdit
-        Left = 112
-        Height = 23
-        Top = 40
-        Width = 145
-        OnEnter = edt_Enter
-        TabOrder = 0
-      end
       object lbl_filiere_erreur: TLabel
         Left = 112
         Height = 15
@@ -398,17 +382,17 @@ object f_detail_inscrit: Tf_detail_inscrit
         Top = 40
         Width = 145
         ItemHeight = 15
-        TabOrder = 1
+        TabOrder = 0
         Text = 'cbb_filiere'
       end
     end
     object pnl_releve: TPanel
       Left = 1
-      Height = 221
+      Height = 218
       Top = 432
       Width = 917
       Align = alClient
-      ClientHeight = 221
+      ClientHeight = 218
       ClientWidth = 917
       TabOrder = 4
       object pnl_releve_titre: TPanel
@@ -440,7 +424,7 @@ object f_detail_inscrit: Tf_detail_inscrit
       end
       object pnl_releve_list: TPanel
         Left = 1
-        Height = 180
+        Height = 177
         Top = 40
         Width = 551
         Align = alLeft

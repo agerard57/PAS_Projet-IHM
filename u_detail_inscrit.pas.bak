@@ -18,11 +18,9 @@ type
     btn_retour: TButton;
     cbb_genre: TComboBox;
     cbb_filiere: TComboBox;
-    edt_genre: TEdit;
     edt_tel: TEdit;
     edt_port: TEdit;
     edt_mel: TEdit;
-    edt_filiere: TEdit;
     edt_adresse: TEdit;
     edt_postal: TEdit;
     edt_ville: TEdit;
@@ -64,6 +62,7 @@ type
     pnl_filiere: TPanel;
     procedure btn_annulerClick(Sender: TObject);
     procedure btn_retourClick(Sender: TObject);
+    procedure cbb_genreChange(Sender: TObject);
     procedure edt_genreKeyPress(Sender: TObject; var Key: char);
     procedure edt_numExit(Sender: TObject);
     procedure edt_nomExit(Sender: TObject);
@@ -75,11 +74,11 @@ type
     procedure edt_portExit(Sender: TObject);
     procedure edt_melExit(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure init ( idinf : string; affi : boolean);
-    procedure detail ( idinf : string);
-    procedure edit ( idinf : string);
+    procedure init ( id_ins : string; affi : boolean);
+    procedure detail ( id_ins : string);
+    procedure edit ( id_ins : string);
     procedure add;
-    procedure delete ( idinf : string);
+    procedure delete ( id_ins : string);
     procedure lbl_fili_courtClick(Sender: TObject);
     procedure lbl_fili_longClick(Sender: TObject);
     procedure pnl_titreClick(Sender: TObject);
@@ -94,6 +93,7 @@ type
      procedure affi_contact ( num : string);
      procedure affi_filiere ( num : string);
      function  affi_erreur_saisie (erreur : string; lbl : TLabel; obj : TObject) : boolean;
+     procedure lbl_filiere_afficher;
 
   public
     { public declarations }
@@ -106,13 +106,14 @@ implementation
 
 {$R *.lfm}
 
-uses u_feuille_style, u_list_inscrit, u_select_inscrit;
+uses u_feuille_style, u_list_inscrit, u_select_inscrit, u_releve_list, u_modele, u_loaddataset;
 
 { Tf_detail_inscrit }
 
 Var oldvaleur : string;
  id : string;
-procedure Tf_detail_inscrit.Init ( idinf : string; affi : boolean);
+
+procedure Tf_detail_inscrit.Init ( id_ins : string; affi : boolean);
 
 
 begin
@@ -150,9 +151,13 @@ begin
  edt_num.clear;
  edt_nom.clear;
  edt_prenom.clear;
- edt_genre.clear;
+ edt_num.ReadOnly := affi;
+ edt_nom.ReadOnly := affi;
+ edt_prenom.ReadOnly := affi;
  cbb_filiere.ReadOnly := true;
  cbb_genre.ReadOnly := true;
+ cbb_genre.Enabled := affi;
+ cbb_filiere.Enabled := affi;
 // initialisation adresse
  lbl_adresse_erreur.caption :='';
  lbl_postal_erreur.caption :='';
@@ -177,8 +182,6 @@ begin
  lbl_filiere_erreur.caption :='';
  lbl_fili_long.caption :='';
  lbl_fili_court.caption :='';
- edt_filiere.clear;
- edt_filiere.ReadOnly :=affi;
 
 
 // init autre
@@ -189,14 +192,37 @@ begin
 // initialisation releve
  lbl_releve_erreur.Caption :='';
  show;
- id := idinf;
+ id := id_ins;
  IF NOT ( id = '')
- THEN affi_page;
+ THEN
+  BEGIN
+     lbl_releve.autosize := true;
+     affi_page;
+     pnl_releve_list.show;
+     f_releve_list.borderstyle  := bsNone;
+     f_releve_list.parent       := pnl_releve_list;
+     f_releve_list.align	:= alClient;
+     f_releve_list.init;
+     f_releve_list.show;
+     f_releve_list.affi_data(modele.inscri_notes(id));     //TODO
+     lbl_releve.caption :=
+     'Relevé de Notes - '
+     + 'Moyenne étudiant : ' + modele.moy_inscri(id) + ' - '
+     + 'Moyenne filière : ' + modele.moy_filiere(cbb_filiere.text)
+     + '  ';
+   END
+   ELSE
+   BEGIN
+     pnl_releve_list.hide;
+     lbl_releve.autosize := false;
+     lbl_releve.width := 140;
+     lbl_releve.Caption := 'Relevé de Notes';
+   end;
 end;
 
 procedure Tf_detail_inscrit.btn_validerClick(Sender: TObject);
 var
-    //flux : TLoadDataSet;
+    flux : TLoadDataSet;
     saisie, erreur, ch	 : string;
     i 	     : integer;
     complete  : boolean;
@@ -208,10 +234,11 @@ begin
 	 erreur := '';
 	 saisie := edt_num.text;
 	 if  saisie = ''   then  erreur := 'Le numéro doit être rempli.'
-	 //else begin
-	   //   flux := modele.inscrit_liste_etu(saisie, '');
-	     // if  NOT  flux.endOf
-	       //then  erreur := 'Le numéro existe déjà';
+	 else begin
+	 flux := modele.inscri_list_etu(saisie, '');
+	 if  NOT  flux.endOf
+	 then  erreur := 'Le numéro existe déjà';
+
 	 end;
 	 complete := affi_erreur_saisie (erreur, lbl_num_erreur, edt_num)  AND  complete;
 
@@ -254,14 +281,48 @@ begin
     erreur := '';
     saisie := cbb_filiere.text;
     if  saisie = ''  then  erreur := 'La filière doit être renseignée.';
-complete := affi_erreur_saisie (erreur, lbl_filiere_erreur, cbb_filiere)  AND  complete;
+    complete := affi_erreur_saisie (erreur, lbl_filiere_erreur, cbb_filiere)  AND  complete;
 
+    if  NOT  complete then
+        messagedlg ('Erreur d''enregistrement inscrit', 'La saisie est incorrecte.' +#13 +'Corrigez la saisie et validez à nouveau.', mtWarning, [mbOk], 0)
+    else  begin
+          if  id = '' then
+              modele.inscri_ajout(edt_num.text, cbb_genre.text, edt_nom.text, edt_prenom.text, edt_adresse.text, edt_postal.text, edt_ville.text, edt_port.text, edt_tel.text, edt_mel.text, cbb_filiere.text)
+	  else  begin
+	      modele.inscri_maj(id, cbb_genre.text, edt_nom.text, edt_prenom.text, edt_adresse.text, edt_postal.text, edt_ville.text, edt_port.text, edt_tel.text, edt_mel.text);
+	  end;
+   	  if id = '' then
+              f_list_inscrit.line_add(modele.inscri_list_etu(edt_num.text, ''))
+   	  else
+              f_list_inscrit.line_edit(modele.inscri_list_etu(id, ''));
+   	  close;
+    end;
+end;
 end;
 
 
 procedure Tf_detail_inscrit.affi_page;
+var
+   flux : Tloaddataset;
 begin
-// affichage des données de la base, complété par la suite
+   edt_tel.text	:= '';
+   edt_port.text	:= '';
+
+   flux   := modele.inscri_num(id);
+   flux.read;
+   edt_num.text	        := flux.Get('id');
+   edt_nom.text 	:= flux.Get('nom');
+   cbb_genre.text       := flux.Get('civ');
+   edt_prenom.text	:= flux.Get('prenom');
+   edt_adresse.text	:= flux.Get('adresse');     hyngfdyhtrsfdyhtrdfgh
+   edt_postal.text	:= flux.Get('cp');
+   edt_ville.text	:= flux.Get('ville');
+   edt_tel.text	        := flux.Get('telephone');
+   edt_port.text	:= flux.Get('portable');
+   edt_mel.text	        := flux.Get('mel');
+   cbb_filiere.text	:= flux.Get('code');
+   lbl_filiere_afficher;
+   flux.destroy;
 end;
 
 procedure Tf_detail_inscrit.btn_annulerClick(Sender: TObject);
@@ -274,6 +335,11 @@ procedure Tf_detail_inscrit.btn_retourClick(Sender: TObject);
 begin
 f_select_inscrit.show;
 close;
+end;
+
+procedure Tf_detail_inscrit.cbb_genreChange(Sender: TObject);
+begin
+ lbl_filiere_afficher
 end;
 
 procedure Tf_detail_inscrit.edt_genreKeyPress(Sender: TObject; var Key: char);
@@ -350,26 +416,18 @@ begin
   f_select_inscrit.hide;
 end;
 
-procedure Tf_detail_inscrit.detail (idinf : string);
+procedure Tf_detail_inscrit.detail (id_ins : string);
 begin
- init (idinf, true); // mode affichage
+ init (id_ins, true); // mode affichage
  pnl_titre.caption := 'Détail d''une inscription';
  btn_retour.setFocus;
- edt_genre.Visible := True;
- edt_filiere.visible := True;
- cbb_genre.Visible := False;
- cbb_filiere.visible := False;
 end;
 
-procedure Tf_detail_inscrit.edit (idinf : string);
+procedure Tf_detail_inscrit.edit (id_ins : string);
 begin
- init (idinf, false);
+ init (id_ins, false);
  pnl_titre.caption := 'Modification d''une inscription';
  edt_num.ReadOnly := true;
- edt_genre.Visible := False;
- edt_filiere.visible := False;
- cbb_genre.Visible := True;
- cbb_filiere.visible := True;
 end;
 
 procedure Tf_detail_inscrit.add;
@@ -377,18 +435,15 @@ begin
  init ('',false);
  pnl_titre.caption := 'Nouvelle inscription';
  edt_num.setFocus;
- edt_genre.Visible := False;
- edt_filiere.visible := False;
- cbb_genre.Visible := True;
- cbb_filiere.visible := True;
 end;
-procedure Tf_detail_inscrit.delete (idinf : string);
+procedure Tf_detail_inscrit.delete (id_ins : string);
 begin
  IF messagedlg ('Demande de confirmation'
- ,'Confirmez-vous la suppression de l''inscrit n°' +idinf
+ ,'Confirmez-vous la suppression de l''inscrit n°' +id_ins
  ,mtConfirmation, [mbYes,mbNo], 0, mbNo) = mrYes
  THEN BEGIN
-// suppression dans la base, complété par la suite
+ modele.inscri_note_supr (id_ins);
+ modele.inscri_supr (id_ins);
 f_list_inscrit.line_delete;
  END;
 end;
@@ -471,5 +526,24 @@ begin
    else result := true;
 end;
 
+
+procedure Tf_detail_inscrit.lbl_filiere_afficher();
+ var
+    flux : Tloaddataset;
+ begin
+      if NOT (cbb_filiere.Text = '') THEN
+      begin
+      flux := modele.filiere_code(cbb_filiere.Text);
+      flux.read;
+        lbl_fili_court.caption  := flux.Get('lib_court');
+        lbl_fili_long.caption := flux.Get('lib_milong');
+      flux.destroy;
+      end
+      ELSE
+      begin
+        lbl_fili_court.caption	 := 'Filière non identifiée';
+        lbl_fili_long.caption := '';
+      end;
+ end;
 end.
 
