@@ -20,6 +20,7 @@ type
     procedure btn_line_editClick(Sender: TObject);
 
   procedure Init;
+  procedure pnl_btn_ligneClick(Sender: TObject);
 
   private
     { private declarations }
@@ -64,6 +65,11 @@ begin
  style.panel_travail(pnl_btn);
  style.panel_travail(pnl_affi);
  style.grille (sg_liste);
+end;
+
+procedure Tf_list_inscrit.pnl_btn_ligneClick(Sender: TObject);
+begin
+
 end;
 
 end.

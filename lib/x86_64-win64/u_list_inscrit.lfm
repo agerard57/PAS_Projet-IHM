@@ -17,6 +17,7 @@ inherited f_list_inscrit: Tf_list_inscrit
     inherited pnl_btn_ligne: TPanel
       Width = 521
       ClientWidth = 521
+      OnClick = pnl_btn_ligneClick
       inherited btn_line_detail: TSpeedButton
         Left = 359
         OnClick = btn_line_detailClick

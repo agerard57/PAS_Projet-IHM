@@ -63,10 +63,12 @@ begin
   style.panel_defaut (pnl_info);
   f_gabarit.width := 1200;
   f_gabarit.height := 800;
+  modele.open;
 end;
 
 procedure Tf_gabarit.item_quitterClick(Sender: TObject);
 begin
+modele.close;
 close;
 end;
 
@@ -114,16 +116,6 @@ f_list_inscrit.hide;
 f_detail_inscrit.hide;
 f_select_inscrit.hide;
 
-end;
-
-procedure Tf_gabarit.FormShow(Sender: TObject);
-begin
-modele.open;
-end;
-procedure Tf_gabarit.item_quitterClick(Sender: TObject);
-begin
-modele.close;
-close;
 end;
 
 end.

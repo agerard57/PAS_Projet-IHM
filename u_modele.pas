@@ -53,7 +53,7 @@ end;
 
 function Tmodele.inscri_list_tous : TLoadDataSet;
 begin
-     result := load('sp_inscri_list_tous',[]);
+     load('sp_inscri_list_tous',[]);
 end;
 
 function Tmodele.inscri_list_filiere (code : string) : TLoadDataSet;

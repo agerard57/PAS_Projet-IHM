@@ -530,7 +530,6 @@ procedure Tf_detail_inscrit.lbl_filiere_afficher();
       if NOT (cbb_filiere.Text = '') THEN
       begin
       flux := modele.filiere_code(cbb_filiere.Text);
-
       flux.read;
         lbl_fili_court.caption  := flux.Get('lib_court');
         lbl_fili_long.caption := flux.Get('lib_milong');

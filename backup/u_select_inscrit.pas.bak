@@ -77,7 +77,7 @@ begin
    f_list_inscrit.affi_data(modele.inscri_list_etu(edt_num_etu.text, edt_nom_etu.text))
 
    else if pnl_filliere_edit.visible then
-   f_list_inscrit.affi_data(modele.inscri_list_filliere(edt_code_fil.text))
+   f_list_inscrit.affi_data(modele.inscri_list_filiere(edt_code_fil.text))
 
 end ;
 

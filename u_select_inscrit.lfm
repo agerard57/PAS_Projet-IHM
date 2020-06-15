@@ -168,6 +168,7 @@ object f_select_inscrit: Tf_select_inscrit
           Width = 80
           AutoSize = False
           BorderStyle = bsNone
+          CharCase = ecUppercase
           Font.Color = clBlack
           ParentFont = False
           TabOrder = 0

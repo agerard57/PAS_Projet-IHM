@@ -121,6 +121,7 @@ object f_detail_inscrit: Tf_detail_inscrit
         Height = 23
         Top = 48
         Width = 176
+        CharCase = ecUppercase
         OnEnter = edt_Enter
         OnExit = edt_nomExit
         TabOrder = 1
@@ -193,7 +194,7 @@ object f_detail_inscrit: Tf_detail_inscrit
         ParentColor = False
       end
       object edt_adresse: TEdit
-        Left = 112
+        Left = 113
         Height = 23
         Top = 24
         Width = 316
