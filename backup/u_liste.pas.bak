@@ -219,7 +219,7 @@ end;
 
 procedure Tf_liste.spedt_nbligChange(Sender: TObject);
 begin
-  nblignesparpage := spedt_nblig.Value;
+  nblignesparpage := spedt_nblig.Value;  //La valeur du TSpinEdit devient nblignesparpage
 end;
 
 function  Tf_liste.SumColumn (cle : string)   : real;

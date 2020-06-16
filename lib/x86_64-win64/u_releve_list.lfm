@@ -1,7 +1,7 @@
 inherited f_releve_list: Tf_releve_list
-  Left = 567
+  Left = 525
   Height = 363
-  Top = 510
+  Top = 470
   Width = 581
   Caption = 'Relevé de notes'
   ClientHeight = 363

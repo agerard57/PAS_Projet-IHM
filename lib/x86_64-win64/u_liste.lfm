@@ -1,7 +1,7 @@
 object f_liste: Tf_liste
-  Left = 541
+  Left = 890
   Height = 560
-  Top = 159
+  Top = 401
   Width = 800
   Caption = 'f_liste'
   ClientHeight = 560

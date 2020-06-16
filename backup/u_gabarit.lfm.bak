@@ -1,10 +1,10 @@
 object f_gabarit: Tf_gabarit
-  Left = 459
-  Height = 1008
-  Top = 37
+  Left = 559
+  Height = 960
+  Top = 0
   Width = 1200
   Caption = 'Gestion de la scolarité'
-  ClientHeight = 988
+  ClientHeight = 940
   ClientWidth = 1200
   Color = 15461355
   Font.CharSet = ANSI_CHARSET
@@ -28,7 +28,7 @@ object f_gabarit: Tf_gabarit
   object pnl_info: TPanel
     Left = 0
     Height = 30
-    Top = 958
+    Top = 910
     Width = 1200
     Align = alBottom
     Alignment = taLeftJustify
@@ -37,16 +37,16 @@ object f_gabarit: Tf_gabarit
   end
   object pnl_travail: TPanel
     Left = 250
-    Height = 928
+    Height = 880
     Top = 30
     Width = 950
     Align = alRight
-    ClientHeight = 928
+    ClientHeight = 880
     ClientWidth = 950
     TabOrder = 2
     object lbl_bienvenue: TLabel
       Left = 1
-      Height = 836
+      Height = 788
       Top = 91
       Width = 948
       Align = alClient
@@ -67,7 +67,7 @@ object f_gabarit: Tf_gabarit
   end
   object pnl_selection: TPanel
     Left = 0
-    Height = 928
+    Height = 880
     Top = 30
     Width = 250
     Align = alClient

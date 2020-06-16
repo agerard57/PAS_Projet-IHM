@@ -18,6 +18,8 @@ type
     btn_retour: TButton;
     cbb_genre: TComboBox;
     cbb_filiere: TComboBox;
+    edt_filiere: TEdit;
+    edt_genre: TEdit;
     edt_tel: TEdit;
     edt_port: TEdit;
     edt_mel: TEdit;
@@ -152,11 +154,14 @@ begin
  edt_num.clear;
  edt_nom.clear;
  edt_prenom.clear;
+ edt_genre.clear;
  edt_num.ReadOnly := affi;
  edt_nom.ReadOnly := affi;
  edt_prenom.ReadOnly := affi;
  cbb_filiere.ReadOnly := true;
  cbb_genre.ReadOnly := true;
+ edt_genre.ReadOnly := true;
+ edt_filiere.ReadOnly := true;
  cbb_genre.Enabled := affi;
  cbb_filiere.Enabled := affi;
 // initialisation adresse
@@ -311,21 +316,23 @@ begin
 
    flux   := modele.inscri_num(id);
    flux.read;
-   edt_num.text            := flux.Get('id');
-   edt_nom.text     := flux.Get('nom');
-   edt_prenom.text    := flux.Get('prenom');
-   edt_adresse.text    := flux.Get('adresse');
-   edt_postal.text    := flux.Get('cp');
-   edt_ville.text    := flux.Get('ville');
-   edt_tel.text            := flux.Get('telephone');
-   edt_port.text    := flux.Get('portable');
-   edt_mel.text            := flux.Get('mel');
+   edt_num.text                                     := flux.Get('id');
+   edt_nom.text                                     := flux.Get('nom');
+   edt_prenom.text                                  := flux.Get('prenom');
+   edt_adresse.text                                 := flux.Get('adresse');
+   edt_postal.text                                  := flux.Get('cp');
+   edt_ville.text                                   := flux.Get('ville');
+   edt_tel.text                                     := flux.Get('telephone');
+   edt_genre.text                                   := flux.Get('civ');
+   edt_port.text                                    := flux.Get('portable');
+   edt_mel.text                                     := flux.Get('mel');
+   edt_filiere.text                                 := flux.Get('code');
    cbb_genre.Clear;
    cbb_genre.Items.Add(flux.Get('civ'));
    cbb_genre.ItemIndex := 0;
    cbb_filiere.Items.Add(flux.Get('code'));
    cbb_filiere.ItemIndex := 0;
-   if NOT (cbb_filiere.Text = '') THEN
+   if NOT (edt_filiere.Text = '') THEN
       begin
         lbl_fili_court.caption  := flux.Get('lib_court');
         lbl_fili_long.caption := flux.Get('lib_milong');
@@ -433,16 +440,26 @@ end;
 
 procedure Tf_detail_inscrit.detail (id_ins : string);
 begin
- init (id_ins, true); // mode affichage
+ init (id_ins, true);
  pnl_titre.caption := 'Détail d''une inscription';
  btn_retour.setFocus;
+  edt_genre.Visible := True;
+  edt_filiere.Visible := True;
+  edt_filiere.ReadOnly := True;
+  cbb_filiere.Visible := False;
+  cbb_genre.Visible := False;
 end;
 
 procedure Tf_detail_inscrit.edit (id_ins : string);
 begin
  init (id_ins, false);
  pnl_titre.caption := 'Modification d''une inscription';
- edt_num.ReadOnly := true;
+ edt_num.ReadOnly := True;
+ cbb_genre.Enabled := True;
+ edt_genre.Visible := False;
+ edt_filiere.Visible := True;
+ cbb_filiere.Visible := False;
+ edt_filiere.ReadOnly := False;
 end;
 
 procedure Tf_detail_inscrit.add;
@@ -450,6 +467,13 @@ begin
  init ('',false);
  pnl_titre.caption := 'Nouvelle inscription';
  edt_num.setFocus;
+ edt_genre.Visible := False;
+ cbb_genre.Visible := True;
+ cbb_genre.Enabled := True;
+ edt_filiere.Visible := False;
+ cbb_filiere.Visible := True;
+ cbb_filiere.ReadOnly := False;
+ cbb_filiere.Enabled := True;
 end;
 procedure Tf_detail_inscrit.delete (id_ins : string);
 begin

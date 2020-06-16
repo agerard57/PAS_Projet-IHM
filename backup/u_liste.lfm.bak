@@ -1,7 +1,7 @@
 object f_liste: Tf_liste
-  Left = 541
+  Left = 889
   Height = 560
-  Top = 159
+  Top = 400
   Width = 800
   Caption = 'f_liste'
   ClientHeight = 560
@@ -1080,6 +1080,17 @@ object f_liste: Tf_liste
         }
         ShowHint = True
         ParentShowHint = False
+      end
+      object spedt_nblig: TSpinEdit
+        Left = 28
+        Height = 23
+        Top = 5
+        Width = 50
+        MaxValue = 50
+        MinValue = 2
+        OnChange = spedt_nbligChange
+        TabOrder = 0
+        Value = 20
       end
     end
   end
