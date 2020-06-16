@@ -187,7 +187,7 @@ begin
 
 // init autre
  btn_retour.visible  :=affi;
- btn_valider.visible :=NOT affi;
+ btn_valider.visible := NOT affi;
  btn_annuler.visible :=NOT affi;
 
 // initialisation releve
@@ -336,7 +336,7 @@ begin
         lbl_fili_long.caption := '';
       end;
    flux.destroy;
-end;   
+end;
 
 procedure Tf_detail_inscrit.btn_annulerClick(Sender: TObject);
 begin
@@ -369,6 +369,8 @@ end;
 procedure Tf_detail_inscrit.edt_nomExit(Sender: TObject);
 begin
 edt_nom.text := TRIM(edt_nom.text);
+IF NOT ( edt_postal.text = oldvaleur )
+THEN affi_ident (edt_nom.text);
 end;
 
 procedure Tf_detail_inscrit.edt_prenomExit(Sender: TObject);
@@ -492,7 +494,7 @@ var
    ch : string;
 begin
    if  num = ''
-   then  lbl_num_erreur.caption := 'erreur1'
+   then  lbl_nom_erreur.caption := 'Le nom doit être rempli'
    else  begin
            // appel procédure chargement des données, à compléter par la suite
    end;
@@ -503,7 +505,7 @@ end;
     ch : string;
  begin
     if  num = ''
-    then  lbl_adresse_erreur.caption := 'erreur2'
+    then  lbl_ville_erreur.caption := 'La commune doit être rempli'
     else  begin
           // appel procédure chargement des données, à compléter par la suite
     end;
@@ -515,7 +517,7 @@ var
 begin
 
    if  num = ''
-   then lbl_tel_erreur.caption := 'erreur3'
+   then lbl_tel_erreur.caption := 'Le téléphone ou le portable doit être rempli'
    else  begin
            // appel procédure chargement des données, à compléter par la suite
    end;

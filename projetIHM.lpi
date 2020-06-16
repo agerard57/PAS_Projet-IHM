@@ -36,7 +36,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="10">
+    <Units Count="8">
       <Unit0>
         <Filename Value="projetIHM.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -78,23 +78,12 @@
         <IsPartOfProject Value="True"/>
       </Unit6>
       <Unit7>
-        <Filename Value="u_loaddataset.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit7>
-      <Unit8>
-        <Filename Value="u_releve_list.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="f_releve_list"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-      </Unit8>
-      <Unit9>
         <Filename Value="u_liste.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="f_liste"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-      </Unit9>
+      </Unit7>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

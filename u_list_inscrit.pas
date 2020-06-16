@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  Buttons, Grids, Spin, u_liste;
+  Buttons, Grids, u_liste;
 
 type
 
@@ -20,7 +20,6 @@ type
 
   procedure Init;
   procedure pnl_btn_ligneClick(Sender: TObject);
-  procedure pnl_btn_pageClick(Sender: TObject);
 
   private
     { private declarations }
@@ -35,7 +34,7 @@ implementation
 
 {$R *.lfm}
 
-uses u_feuille_style, u_detail_inscrit, u_modele;
+uses u_feuille_style, u_detail_inscrit, u_select_inscrit, u_modele;
 
 procedure Tf_list_inscrit.btn_line_addClick(Sender: TObject);
 begin
@@ -71,14 +70,6 @@ procedure Tf_list_inscrit.pnl_btn_ligneClick(Sender: TObject);
 begin
 
 end;
-
-procedure Tf_list_inscrit.pnl_btn_pageClick(Sender: TObject);
-begin
-
-end;
-
-
-
 
 end.
 

@@ -1,11 +1,11 @@
 object f_liste: Tf_liste
-  Left = 541
+  Left = 764
   Height = 560
-  Top = 159
-  Width = 800
+  Top = 243
+  Width = 992
   Caption = 'f_liste'
   ClientHeight = 560
-  ClientWidth = 800
+  ClientWidth = 992
   OnCreate = FormCreate
   ParentFont = True
   LCLVersion = '1.6.0.4'
@@ -13,7 +13,7 @@ object f_liste: Tf_liste
     Left = 0
     Height = 34
     Top = 0
-    Width = 800
+    Width = 992
     Align = alTop
     Alignment = taLeftJustify
     BevelOuter = bvNone
@@ -32,11 +32,11 @@ object f_liste: Tf_liste
     Left = 0
     Height = 34
     Top = 526
-    Width = 800
+    Width = 992
     Align = alBottom
     BevelOuter = bvNone
     ClientHeight = 34
-    ClientWidth = 800
+    ClientWidth = 992
     TabOrder = 1
     object pnl_btn_page: TPanel
       Left = 0
@@ -550,14 +550,14 @@ object f_liste: Tf_liste
       Left = 399
       Height = 34
       Top = 0
-      Width = 401
+      Width = 593
       Align = alClient
       BevelOuter = bvNone
       ClientHeight = 34
-      ClientWidth = 401
+      ClientWidth = 593
       TabOrder = 1
       object btn_line_detail: TSpeedButton
-        Left = 239
+        Left = 431
         Height = 34
         Hint = 'détail'
         Top = 0
@@ -680,7 +680,7 @@ object f_liste: Tf_liste
         ParentShowHint = False
       end
       object btn_line_add: TSpeedButton
-        Left = 280
+        Left = 472
         Height = 34
         Hint = 'ajouter'
         Top = 0
@@ -836,7 +836,7 @@ object f_liste: Tf_liste
         ParentShowHint = False
       end
       object btn_line_delete: TSpeedButton
-        Left = 359
+        Left = 551
         Height = 34
         Hint = 'supprimer'
         Top = 0
@@ -959,7 +959,7 @@ object f_liste: Tf_liste
         ParentShowHint = False
       end
       object btn_line_edit: TSpeedButton
-        Left = 319
+        Left = 511
         Height = 34
         Hint = 'modifier'
         Top = 0
@@ -1082,13 +1082,16 @@ object f_liste: Tf_liste
         ParentShowHint = False
       end
       object spedt_nblig: TSpinEdit
-        Left = 28
+        Left = 184
         Height = 23
+        Hint = 'valeur entre 2 et 50'
         Top = 5
         Width = 50
         MaxValue = 50
         MinValue = 2
         OnChange = spedt_nbligChange
+        ParentShowHint = False
+        ShowHint = True
         TabOrder = 0
         Value = 20
       end
@@ -1098,17 +1101,17 @@ object f_liste: Tf_liste
     Left = 0
     Height = 492
     Top = 34
-    Width = 800
+    Width = 992
     Align = alClient
     BevelOuter = bvNone
     ClientHeight = 492
-    ClientWidth = 800
+    ClientWidth = 992
     TabOrder = 2
     object sg_liste: TStringGrid
       Left = 0
       Height = 492
       Top = 0
-      Width = 800
+      Width = 992
       Align = alClient
       AlternateColor = 15461355
       Color = clDefault
