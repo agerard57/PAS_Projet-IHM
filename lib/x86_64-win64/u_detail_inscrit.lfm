@@ -1,16 +1,10 @@
 object f_detail_inscrit: Tf_detail_inscrit
-<<<<<<< HEAD
   Left = 251
   Height = 720
   Top = 671
-=======
-  Left = 1332
-  Height = 717
-  Top = 986
->>>>>>> 6f8bcacea9c18266d60c360a5e9eebb7b9ae2c56
   Width = 919
   Caption = 'Détail des inscriptions'
-  ClientHeight = 717
+  ClientHeight = 720
   ClientWidth = 919
   OnShow = FormShow
   ParentFont = True
@@ -27,7 +21,7 @@ object f_detail_inscrit: Tf_detail_inscrit
   object pnl_btn: TPanel
     Left = 0
     Height = 40
-    Top = 677
+    Top = 680
     Width = 919
     Align = alBottom
     ClientHeight = 40
@@ -63,11 +57,11 @@ object f_detail_inscrit: Tf_detail_inscrit
   end
   object pnl_detail: TPanel
     Left = 0
-    Height = 651
+    Height = 654
     Top = 26
     Width = 919
     Align = alClient
-    ClientHeight = 651
+    ClientHeight = 654
     ClientWidth = 919
     TabOrder = 2
     object pnl_ident: TPanel
@@ -127,6 +121,7 @@ object f_detail_inscrit: Tf_detail_inscrit
         Height = 23
         Top = 48
         Width = 176
+        CharCase = ecUppercase
         OnEnter = edt_Enter
         OnExit = edt_nomExit
         TabOrder = 1
@@ -199,7 +194,7 @@ object f_detail_inscrit: Tf_detail_inscrit
         ParentColor = False
       end
       object edt_adresse: TEdit
-        Left = 112
+        Left = 113
         Height = 23
         Top = 24
         Width = 316
@@ -212,6 +207,7 @@ object f_detail_inscrit: Tf_detail_inscrit
         Height = 23
         Top = 56
         Width = 80
+        MaxLength = 5
         OnEnter = edt_Enter
         OnExit = edt_postalExit
         TabOrder = 1
@@ -297,6 +293,7 @@ object f_detail_inscrit: Tf_detail_inscrit
         Height = 23
         Top = 48
         Width = 85
+        MaxLength = 10
         NumbersOnly = True
         OnEnter = edt_Enter
         OnExit = edt_telExit
@@ -307,6 +304,7 @@ object f_detail_inscrit: Tf_detail_inscrit
         Height = 23
         Top = 48
         Width = 88
+        MaxLength = 10
         NumbersOnly = True
         OnEnter = edt_Enter
         OnExit = edt_portExit
@@ -395,11 +393,11 @@ object f_detail_inscrit: Tf_detail_inscrit
     end
     object pnl_releve: TPanel
       Left = 1
-      Height = 218
+      Height = 221
       Top = 432
       Width = 917
       Align = alClient
-      ClientHeight = 218
+      ClientHeight = 221
       ClientWidth = 917
       TabOrder = 4
       object pnl_releve_titre: TPanel
@@ -431,7 +429,7 @@ object f_detail_inscrit: Tf_detail_inscrit
       end
       object pnl_releve_list: TPanel
         Left = 1
-        Height = 177
+        Height = 180
         Top = 40
         Width = 551
         Align = alLeft
