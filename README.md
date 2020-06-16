@@ -1,5 +1,8 @@
 # Projet-IHM
 
+V.06.16.03:
+-TSpinEdit fonctionnel !
+
 
 V.06.14.18:
 -Implémantation de la BDD

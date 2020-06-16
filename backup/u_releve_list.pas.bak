@@ -9,8 +9,7 @@ uses
 
 type
   Tf_releve_list = class(TF_liste)
- procedure Init (affi : boolean);
- procedure affi_total;
+ procedure Init;
 
   private
     { private declarations }

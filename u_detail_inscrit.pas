@@ -81,6 +81,7 @@ type
     procedure delete ( id_ins : string);
     procedure lbl_fili_courtClick(Sender: TObject);
     procedure lbl_fili_longClick(Sender: TObject);
+    procedure pnl_filiereClick(Sender: TObject);
     procedure pnl_titreClick(Sender: TObject);
     procedure edt_Enter (Sender : TObject );
     procedure btn_validerClick(Sender: TObject);
@@ -151,8 +152,13 @@ begin
  edt_num.clear;
  edt_nom.clear;
  edt_prenom.clear;
+ edt_num.ReadOnly := affi;
+ edt_nom.ReadOnly := affi;
+ edt_prenom.ReadOnly := affi;
  cbb_filiere.ReadOnly := true;
  cbb_genre.ReadOnly := true;
+ cbb_genre.Enabled := affi;
+ cbb_filiere.Enabled := affi;
 // initialisation adresse
  lbl_adresse_erreur.caption :='';
  lbl_postal_erreur.caption :='';
@@ -300,26 +306,37 @@ procedure Tf_detail_inscrit.affi_page;
 var
    flux : Tloaddataset;
 begin
-   edt_tel.text	:= '';
-   edt_port.text	:= '';
+   edt_tel.text    := '';
+   edt_port.text    := '';
 
    flux   := modele.inscri_num(id);
    flux.read;
-   edt_num.text	        := flux.Get('id');
-   edt_nom.text 	:= flux.Get('nom');
-   cbb_genre.text       := flux.Get('civ');
-   edt_prenom.text	:= flux.Get('prenom');
-   edt_adresse.text	:= flux.Get('adresse');
-   edt_postal.text	:= flux.Get('cp');
-   edt_ville.text	:= flux.Get('ville');
-   edt_tel.text	        := flux.Get('telephone');
-   edt_port.text	:= flux.Get('portable');
-   edt_mel.text	        := flux.Get('mel');
-   cbb_filiere.text	:= flux.Get('filiere');
-   lbl_filiere_afficher;
-
+   edt_num.text            := flux.Get('id');
+   edt_nom.text     := flux.Get('nom');
+   edt_prenom.text    := flux.Get('prenom');
+   edt_adresse.text    := flux.Get('adresse');
+   edt_postal.text    := flux.Get('cp');
+   edt_ville.text    := flux.Get('ville');
+   edt_tel.text            := flux.Get('telephone');
+   edt_port.text    := flux.Get('portable');
+   edt_mel.text            := flux.Get('mel');
+   cbb_genre.Clear;
+   cbb_genre.Items.Add(flux.Get('civ'));
+   cbb_genre.ItemIndex := 0;
+   cbb_filiere.Items.Add(flux.Get('code'));
+   cbb_filiere.ItemIndex := 0;
+   if NOT (cbb_filiere.Text = '') THEN
+      begin
+        lbl_fili_court.caption  := flux.Get('lib_court');
+        lbl_fili_long.caption := flux.Get('lib_milong');
+      end
+      ELSE
+      begin
+        lbl_fili_court.caption     := 'Filière non identifiée';
+        lbl_fili_long.caption := '';
+      end;
    flux.destroy;
-end;
+end;   
 
 procedure Tf_detail_inscrit.btn_annulerClick(Sender: TObject);
 begin
@@ -450,6 +467,11 @@ begin
 end;
 
 procedure Tf_detail_inscrit.lbl_fili_longClick(Sender: TObject);
+begin
+
+end;
+
+procedure Tf_detail_inscrit.pnl_filiereClick(Sender: TObject);
 begin
 
 end;

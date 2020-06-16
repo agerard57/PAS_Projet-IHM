@@ -13,7 +13,6 @@ type
   { Tf_list_inscrit }
 
   Tf_list_inscrit = class(TF_liste)
-    spedt_nblig: TSpinEdit;
     procedure btn_line_addClick(Sender: TObject);
     procedure btn_line_deleteClick(Sender: TObject);
     procedure btn_line_detailClick(Sender: TObject);
@@ -21,6 +20,7 @@ type
 
   procedure Init;
   procedure pnl_btn_ligneClick(Sender: TObject);
+  procedure pnl_btn_pageClick(Sender: TObject);
 
   private
     { private declarations }
@@ -35,7 +35,7 @@ implementation
 
 {$R *.lfm}
 
-uses u_feuille_style, u_detail_inscrit, u_select_inscrit, u_modele;
+uses u_feuille_style, u_detail_inscrit, u_modele;
 
 procedure Tf_list_inscrit.btn_line_addClick(Sender: TObject);
 begin
@@ -71,6 +71,14 @@ procedure Tf_list_inscrit.pnl_btn_ligneClick(Sender: TObject);
 begin
 
 end;
+
+procedure Tf_list_inscrit.pnl_btn_pageClick(Sender: TObject);
+begin
+
+end;
+
+
+
 
 end.
 

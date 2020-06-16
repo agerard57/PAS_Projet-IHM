@@ -81,6 +81,7 @@ type
     procedure delete ( id_ins : string);
     procedure lbl_fili_courtClick(Sender: TObject);
     procedure lbl_fili_longClick(Sender: TObject);
+    procedure pnl_filiereClick(Sender: TObject);
     procedure pnl_titreClick(Sender: TObject);
     procedure edt_Enter (Sender : TObject );
     procedure btn_validerClick(Sender: TObject);
@@ -151,8 +152,13 @@ begin
  edt_num.clear;
  edt_nom.clear;
  edt_prenom.clear;
+ edt_num.ReadOnly := affi;
+ edt_nom.ReadOnly := affi;
+ edt_prenom.ReadOnly := affi;
  cbb_filiere.ReadOnly := true;
  cbb_genre.ReadOnly := true;
+ cbb_genre.Enabled := affi;
+ cbb_filiere.Enabled := affi;
 // initialisation adresse
  lbl_adresse_erreur.caption :='';
  lbl_postal_erreur.caption :='';
@@ -315,9 +321,8 @@ begin
    edt_tel.text	        := flux.Get('telephone');
    edt_port.text	:= flux.Get('portable');
    edt_mel.text	        := flux.Get('mel');
-   cbb_filiere.text	:= flux.Get('filiere');
+   cbb_filiere.text	:= flux.Get('code');
    lbl_filiere_afficher;
-
    flux.destroy;
 end;
 
@@ -450,6 +455,11 @@ begin
 end;
 
 procedure Tf_detail_inscrit.lbl_fili_longClick(Sender: TObject);
+begin
+
+end;
+
+procedure Tf_detail_inscrit.pnl_filiereClick(Sender: TObject);
 begin
 
 end;

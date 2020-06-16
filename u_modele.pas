@@ -40,10 +40,10 @@ implementation
 procedure Tmodele.open;
 begin
      Bd_open ('devbdd.iutmetz.univ-lorraine.fr', 0
-       	, 'gerard326u_projet_ihm'
-       	, 'gerard326u_appli'
-       	, '3630'
-       	, 'mysqld-5', 'libmysql64.dll');
+           , 'poire13u_projet_IHM'
+           , 'poire13u_appli'
+           , 'ni91po72&*'
+           , 'mysqld-5', 'libmysql64.dll');
 end;
 
 procedure Tmodele.close;
@@ -73,7 +73,7 @@ end;
 
 function Tmodele.filiere_code (code : string) : TLoadDataSet;
 begin
-     result := load('sp_filiere_code', [code]);   //TODO
+     result := load('sp_filiere_code', [code]);
 end;
 
 function Tmodele.inscri_notes (num : string) : TLoadDataSet;

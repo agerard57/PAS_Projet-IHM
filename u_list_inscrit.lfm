@@ -1,7 +1,7 @@
 inherited f_list_inscrit: Tf_list_inscrit
-  Left = 856
+  Left = 176
   Height = 717
-  Top = 257
+  Top = 171
   Width = 920
   Caption = 'Liste des inscriptions'
   ClientHeight = 717
@@ -14,6 +14,12 @@ inherited f_list_inscrit: Tf_list_inscrit
     Top = 683
     Width = 920
     ClientWidth = 920
+    inherited pnl_btn_page: TPanel
+      OnClick = pnl_btn_pageClick
+      inherited btn_page_next: TSpeedButton
+        OnClick = btn_page_nextClick
+      end
+    end
     inherited pnl_btn_ligne: TPanel
       Width = 521
       ClientWidth = 521
@@ -35,15 +41,16 @@ inherited f_list_inscrit: Tf_list_inscrit
         OnClick = btn_line_editClick
       end
       object spedt_nblig: TSpinEdit[4]
-        Left = 296
-        Height = 23
+        Left = 288
+        Height = 20
         Top = 6
         Width = 50
         AutoSize = False
         MaxValue = 50
         MinValue = 2
+        OnChange = spedt_nbligChange
         TabOrder = 0
-        Value = 2
+        Value = 20
       end
     end
   end
@@ -55,44 +62,101 @@ inherited f_list_inscrit: Tf_list_inscrit
     inherited sg_liste: TStringGrid
       Height = 649
       Width = 920
+      AutoFillColumns = True
       Columns = <      
         item
           PickList.Strings = (          )
           Title.Caption = 'n°'
-          Width = 100
+          Width = 149
         end      
         item
           PickList.Strings = (          )
           Title.Caption = ' '
-          Width = 100
+          Width = 149
         end      
         item
           PickList.Strings = (          )
           Title.Caption = 'Identité'
-          Width = 180
+          Width = 149
         end      
         item
           PickList.Strings = (          )
           Title.Caption = 'Commune domicile'
-          Width = 180
+          Width = 149
         end      
         item
           PickList.Strings = (          )
           Title.Caption = 'Fillière'
-          Width = 180
+          Width = 149
         end      
         item
           PickList.Strings = (          )
           Title.Caption = ' '
-          Width = 130
+          Width = 154
         end>
+      RowCount = 50
       ColWidths = (
-        100
-        100
-        180
-        180
-        180
-        130
+        149
+        149
+        149
+        149
+        149
+        154
+      )
+      RowHeights = (
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+        22
+      )
+      Cells = (
+        0
       )
     end
   end

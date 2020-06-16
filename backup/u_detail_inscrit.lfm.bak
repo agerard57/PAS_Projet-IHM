@@ -207,6 +207,7 @@ object f_detail_inscrit: Tf_detail_inscrit
         Height = 23
         Top = 56
         Width = 80
+        MaxLength = 5
         OnEnter = edt_Enter
         OnExit = edt_postalExit
         TabOrder = 1
@@ -292,6 +293,7 @@ object f_detail_inscrit: Tf_detail_inscrit
         Height = 23
         Top = 48
         Width = 85
+        MaxLength = 10
         NumbersOnly = True
         OnEnter = edt_Enter
         OnExit = edt_telExit
@@ -302,6 +304,7 @@ object f_detail_inscrit: Tf_detail_inscrit
         Height = 23
         Top = 48
         Width = 88
+        MaxLength = 10
         NumbersOnly = True
         OnEnter = edt_Enter
         OnExit = edt_portExit
@@ -342,6 +345,7 @@ object f_detail_inscrit: Tf_detail_inscrit
       ClientHeight = 96
       ClientWidth = 917
       TabOrder = 3
+      OnClick = pnl_filiereClick
       object lbl_filiere: TLabel
         Left = 1
         Height = 15
