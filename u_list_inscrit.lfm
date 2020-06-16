@@ -40,17 +40,11 @@ inherited f_list_inscrit: Tf_list_inscrit
         Left = 439
         OnClick = btn_line_editClick
       end
-      object spedt_nblig: TSpinEdit[4]
-        Left = 288
-        Height = 20
-        Top = 6
-        Width = 50
-        AutoSize = False
-        MaxValue = 50
-        MinValue = 2
-        OnChange = spedt_nbligChange
-        TabOrder = 0
-        Value = 20
+      inherited spedt_nblig: TSpinEdit
+        Left = 296
+        Hint = 'Valeur entre 2 et 50'
+        ParentShowHint = False
+        ShowHint = True
       end
     end
   end

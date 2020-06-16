@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="15">
+    <Units Count="16">
       <Unit0>
         <Filename Value="projetIHM.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -47,10 +47,11 @@
         <ComponentName Value="f_list_inscrit"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="7"/>
-        <CursorPos X="48" Y="23"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="37" Y="68"/>
         <UsageCount Value="80"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="u_detail_inscrit.pas"/>
@@ -59,7 +60,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="534"/>
+        <TopLine Value="399"/>
         <CursorPos X="48" Y="473"/>
         <UsageCount Value="77"/>
       </Unit5>
@@ -95,12 +96,10 @@
         <ComponentName Value="f_liste"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="209"/>
         <CursorPos X="90" Y="222"/>
         <UsageCount Value="23"/>
-        <Loaded Value="True"/>
       </Unit9>
       <Unit10>
         <Filename Value="..\lazarus\lcl\include\control.inc"/>
@@ -140,6 +139,12 @@
         <UsageCount Value="10"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit14>
+      <Unit15>
+        <Filename Value="u_list_inscrit.lfm"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit15>
     </Units>
     <JumpHistory Count="1">
       <Position1>
